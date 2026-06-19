@@ -200,6 +200,7 @@
   .contact .copy .pic{margin-top:32px;width:min(100%,280px);aspect-ratio:4/5;overflow:hidden}
   .contact .copy .pic .ph{width:100%;height:100%;background-size:cover;background-position:center;filter:saturate(.9)}
   form{background:#fff;border:1px solid var(--color-base-10);padding:clamp(28px,3.5vw,44px)}
+  #leadForm{scroll-margin-top:96px}
   .field{margin-bottom:20px}
   .field label{display:block;font-size:.75rem;font-weight:var(--font-medium);letter-spacing:.04em;margin-bottom:9px}
   .field label .req{font-family:var(--ff-en);color:var(--color-primary);font-size:.625rem;letter-spacing:.1em;margin-left:8px}
@@ -477,6 +478,16 @@
     catch(e){msg.textContent='送信に失敗しました。時間をおいて再度お試しください。';msg.className='form-msg err';}
     finally{btn.innerHTML=prev;btn.style.pointerEvents='auto';}
   });
+
+  // mobile: Contact button jumps straight to the form fields (not the section top)
+  (function(){
+    var cta=document.querySelector('.nav-cta'); if(!cta)return;
+    cta.addEventListener('click',function(e){
+      var mobile=window.matchMedia('(max-width:920px)').matches;
+      var target=document.querySelector(mobile?'#leadForm':'#contact');
+      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  })();
 </script>
 </body>
 </html>
