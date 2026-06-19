@@ -226,8 +226,10 @@
   .foot-col a:hover{color:#fff}
   .foot-bottom{padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--ff-en);font-size:.6875rem;letter-spacing:.06em;color:rgba(255,255,255,.42)}
 
+  .sp-only{display:none}
   @media(max-width:920px){
     .menu{display:none}
+    .sp-only{display:inline}
     .nav-cta{margin-left:auto}
     .hero__catch .en{font-size:clamp(1.7rem,8.5vw,2.5rem)}
     .edge-blur{display:none}
@@ -307,7 +309,7 @@
 <section class="sec products" id="business">
   <div class="wrap sec-head">
     <div class="label en" data-sr>02 — Business</div>
-    <h2 class="heading" data-sr="1" style="white-space:nowrap">自社プロダクトと、AIソリューション事業。</h2>
+    <h2 class="heading" data-sr="1" style="white-space:nowrap">自社プロダクトと、<br class="sp-only">AIソリューション事業。</h2>
     <p class="lead narrow" data-sr="2" style="color:rgba(255,255,255,.62)">TUUNで磨いた実装力を軸に、AIで事業の課題を解いていきます。</p>
   </div>
   <div class="pslider-wrap" data-sr="1">
